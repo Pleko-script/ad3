@@ -20,8 +20,8 @@ class POOL{
    private:
         long Max;
         long Anz;
-        GEOKO* Root;
         GEOKO* Mitte;
+        GEOKO* Index;
         GEOKO* Root = Index;
 
 

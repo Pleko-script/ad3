@@ -23,20 +23,6 @@ POOL::POOL(long Maximal){
 bool POOL::addElement(GEOKO* element){
     if (Anz < Max){
         Index[Anz] = *element;
-        element->setP(Root);
-
-        if(Anz%3==0){
-            Root = element;
-        }
-
-        if(Anz%3==1){
-            Root->setL(element);
-        }
-
-        if(Anz%3==2){
-            Root->setR(element);
-        }
-
         Anz++;
         return true;
     }
