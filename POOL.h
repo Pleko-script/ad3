@@ -22,7 +22,7 @@ class POOL{
         long Anz;
         GEOKO* Root;
         GEOKO* Mitte;
-        GEOKO* Index;
+        GEOKO* Root = Index;
 
 
    public :

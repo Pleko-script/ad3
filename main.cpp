@@ -5,7 +5,7 @@ Gruppe: 21
 Jonas Pardeyke - 11142973
 Nik Tykhomyrov - 11134921
 
-Enth�lt das Hauptprogramm laut Aufgabenstellung
+Enthält das Hauptprogramm laut Aufgabenstellung
 */
 
 #include <iostream>
@@ -17,22 +17,6 @@ Enth�lt das Hauptprogramm laut Aufgabenstellung
 #include "POOL.h"
 
 using namespace std;
-
-
-void createGEOKOfromSekunden(double LG, double BG){
-    int LGmin = LG / 60;
-    double LGsec = LG - LGmin * 60;
-    int LGgrad = LGmin / 60;
-    LGmin = LGmin % 60;
-
-    int BGmin = LG / 60;
-    double BGsec = BG - BGmin * 60;
-    int BGgrad = BGmin / 60;
-    BGmin = BGmin % 60;
-
-    GEOKO* geoko = new GEOKO(BGgrad, LGgrad, BGmin, LGmin, BGsec, LGsec);
-}
-
 
 //MAIN
 int main (){
@@ -46,14 +30,12 @@ int main (){
     cout << endl;
     cout << "4) Daten der Liste schreiben" << endl;
     cout << endl;
-    cout << "5) Baumstruktur pr�fen" << endl;
+    cout << "5) Baumstruktur prüfen" << endl;
     cout << endl;
     cout << "6) Ende" << endl;
     cout << endl;
-    cout << endl;
 
-
-    //verfahren wird ausgew�hlt
+    //verfahren wird ausgewählt
     string wahl;
     cin >> wahl;
     if(wahl=="1"){
@@ -61,7 +43,7 @@ int main (){
         //Bei 1.) soll ein bereits existierendes "POOL"-Objekt erst entfernt werden.
 
         cout << endl;
-        cout << "Wie viele Eintr�ge soll der Baum maximal haben?" << endl;
+        cout << "Wie viele Einträge soll der Baum maximal haben?" << endl;
         cout << endl;
 
         long anzahl;
@@ -84,7 +66,7 @@ int main (){
         stream.open(filename);
 
         if(stream.fail()){
-                cout << "Datei konnte nicht ge�ffnet werden" << endl;
+                cout << "Datei konnte nicht geöffnet werden" << endl;
         }
 
         for(int i=1; i<=anzahl; i++){
@@ -103,7 +85,23 @@ int main (){
                     BG = line;
                     cout << "BG " << i << ": " << BG << endl;
                     cout << endl;
-                    createGEOKOfromSekunden(stod(LG), stod(BG));
+                    double dLG = stod(LG);
+                    double dBG = stod(BG);
+
+                        int LGmin = dLG / 60;
+                        double LGsec = dLG - LGmin * 60;
+                        int LGgrad = LGmin / 60;
+                        LGmin = LGmin % 60;
+
+                        int BGmin = dBG / 60;
+                        double BGsec = dBG - BGmin * 60;
+                        int BGgrad = BGmin / 60;
+                        BGmin = BGmin % 60;
+
+                        GEOKO* geoko = new GEOKO(BGgrad, LGgrad, BGmin, LGmin, BGsec, LGsec);
+
+                        pool->addElement(geoko);
+
                 }
                 k++;
             }
@@ -135,6 +133,4 @@ int main (){
     return 0;
 
 }
-
-
 
