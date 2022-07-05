@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1657035219 source:c:\users\aloysius\desktop\ad praktikum 3\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	"TE.h"
+	"GEOKO.h"
+	"POOL.h"
+
+1656860023 c:\users\aloysius\desktop\ad praktikum 3\te.h
+
+1657035235 c:\users\aloysius\desktop\ad praktikum 3\geoko.h
+	"TE.h"
+
+1657033199 c:\users\aloysius\desktop\ad praktikum 3\pool.h
+	"GEOKO.h"
+	<cstddef>
+
+1657021845 source:c:\users\aloysius\desktop\ad praktikum 3\te.cpp
+	"TE.h"
+
+1657035219 source:c:\users\aloysius\desktop\ad praktikum 3\geoko.cpp
+	"GEOKO.h"
+	"TE.h"
+
+1657033519 source:c:\users\aloysius\desktop\ad praktikum 3\pool.cpp
+	"POOL.h"
+
