@@ -5,7 +5,7 @@ Gruppe: 21
 Jonas Pardeyke - 11142973
 Nik Tykhomyrov - 11134921
 
-Enthält das Hauptprogramm laut Aufgabenstellung
+Enthï¿½lt das Hauptprogramm laut Aufgabenstellung
 */
 
 #include <iostream>
@@ -46,12 +46,14 @@ int main (){
     cout << endl;
     cout << "4) Daten der Liste schreiben" << endl;
     cout << endl;
-    cout << "5) Baumstruktur prüfen" << endl;
+    cout << "5) Baumstruktur prï¿½fen" << endl;
     cout << endl;
     cout << "6) Ende" << endl;
     cout << endl;
+    cout << endl;
 
-    //verfahren wird ausgewählt
+
+    //verfahren wird ausgewï¿½hlt
     string wahl;
     cin >> wahl;
     if(wahl=="1"){
@@ -59,7 +61,7 @@ int main (){
         //Bei 1.) soll ein bereits existierendes "POOL"-Objekt erst entfernt werden.
 
         cout << endl;
-        cout << "Wie viele Einträge soll der Baum maximal haben?" << endl;
+        cout << "Wie viele Eintrï¿½ge soll der Baum maximal haben?" << endl;
         cout << endl;
 
         long anzahl;
@@ -82,7 +84,7 @@ int main (){
         stream.open(filename);
 
         if(stream.fail()){
-                cout << "Datei konnte nicht geöffnet werden" << endl;
+                cout << "Datei konnte nicht geï¿½ffnet werden" << endl;
         }
 
         for(int i=1; i<=anzahl; i++){
