@@ -57,16 +57,12 @@ double GEOKO::getLaSec(){
 double GEOKO::getAbstand(){
     return Abstand;
 }
-
 double GEOKO::getLGinSec(){
     return LGinSec;
 }
-
 double GEOKO::getBGinSec(){
     return BGinSec;
 }
-
-
 
 void GEOKO::setBrGr(int bg){
     BrGr = bg;
@@ -92,51 +88,6 @@ void GEOKO::setKOinSec(double LG, double BG){
     LGinSec = LG;
     BGinSec = BG;
 }
-
-
-
-
-void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte){
-
-
-    int LGmin = LGSec / 60;
-    double LGsec = LGSec - LGmin * 60;
-    int LGgrad = LGmin / 60;
-    LGmin = LGmin % 60;
-
-    int BGmin = BGSec / 60;
-    double BGsec = BGSec - BGmin * 60;
-    int BGgrad = BGmin / 60;
-    BGmin = BGmin % 60;
-
-    if(mitte==0){
-    cout << "-----Neue Koordiante-----" << endl;
-    } else {
-    cout << "-----Mitte-----" << endl;
-    }
-    cout << "Laenge (" << fixed << LGSec << ")"<< endl;
-    cout << "Grad:    " << LGgrad << endl;
-    cout << "Minute:  " << LGmin << endl;
-    cout << "Sekunde: " << fixed << LGsec << endl;
-    cout << endl;
-    cout << "Breite (" << fixed << BGSec << ")"<< endl;
-    cout << "Grad:    " << BGgrad << endl;
-    cout << "Minute:  " << BGmin << endl;
-    cout << "Sekunde: " << fixed << BGsec << endl;
-    cout << endl;
-    cout << endl;
-
-
-    LaGr = LGgrad;
-    BrGr = BGgrad;
-    LaMin = LGmin;
-    BrMin = BGmin;
-    LaSec = LGsec;
-    BrSec = BGsec;
-
-}
-
-
 
 bool GEOKO::operator<(const GEOKO &other) const{
     if(this->Abstand < other.Abstand){
@@ -169,4 +120,44 @@ bool GEOKO::operator!=(const GEOKO &other) const{
     else{
         return false;
     }
+}
+
+void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte){
+
+
+    int LGmin = LGSec / 60;
+    double LGsec = LGSec - LGmin * 60;
+    int LGgrad = LGmin / 60;
+    LGmin = LGmin % 60;
+
+    int BGmin = BGSec / 60;
+    double BGsec = BGSec - BGmin * 60;
+    int BGgrad = BGmin / 60;
+    BGmin = BGmin % 60;
+
+    if(mitte==0){
+        cout << "-----Neue Koordiante-----" << endl;
+    }else{
+        cout << "-----Mitte-----" << endl;
+    }
+
+    cout << "Laenge (" << fixed << LGSec << ")"<< endl;
+    cout << "Grad:    " << LGgrad << endl;
+    cout << "Minute:  " << LGmin << endl;
+    cout << "Sekunde: " << fixed << LGsec << endl;
+    cout << endl;
+    cout << "Breite (" << fixed << BGSec << ")"<< endl;
+    cout << "Grad:    " << BGgrad << endl;
+    cout << "Minute:  " << BGmin << endl;
+    cout << "Sekunde: " << fixed << BGsec << endl;
+    cout << endl;
+    cout << endl;
+
+    LaGr = LGgrad;
+    BrGr = BGgrad;
+    LaMin = LGmin;
+    BrMin = BGmin;
+    LaSec = LGsec;
+    BrSec = BGsec;
+
 }

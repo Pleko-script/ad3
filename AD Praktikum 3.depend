@@ -27,12 +27,12 @@
 1657033519 source:c:\users\aloysius\desktop\ad praktikum 3\pool.cpp
 	"POOL.h"
 
-1657117237 source:\\mac\home\desktop\git ad3\geoko.cpp
+1657119613 source:\\mac\home\desktop\git ad3\geoko.cpp
 	"GEOKO.h"
 	"TE.h"
 	<iostream>
 
-1657117168 \\mac\home\desktop\git ad3\geoko.h
+1657119655 \\mac\home\desktop\git ad3\geoko.h
 	"TE.h"
 
 1657038732 \\mac\home\desktop\git ad3\te.h
@@ -40,15 +40,15 @@
 1657038732 source:\\mac\home\desktop\git ad3\te.cpp
 	"TE.h"
 
-1657117253 source:\\mac\home\desktop\git ad3\pool.cpp
+1657119757 source:\\mac\home\desktop\git ad3\pool.cpp
 	"POOL.h"
 	<iostream>
 
-1657115094 \\mac\home\desktop\git ad3\pool.h
+1657119757 \\mac\home\desktop\git ad3\pool.h
 	"GEOKO.h"
 	<cstddef>
 
-1657116325 source:\\mac\home\desktop\git ad3\main.cpp
+1657119757 source:\\mac\home\desktop\git ad3\main.cpp
 	<iostream>
 	<fstream>
 	<sstream>

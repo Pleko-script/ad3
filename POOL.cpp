@@ -39,13 +39,20 @@ bool POOL::addElement(GEOKO* element){
         LGschnitt = LGsum / Anz;
         BGschnitt = BGsum / Anz;
 
-        Mitte->setKOinSec(LGschnitt, BGschnitt);
+
 
         return true;
     }
     else{
+        cout << endl;
+        cout << ">>>>>Liste voll!<<<<<" << endl;
+        cout << endl;
         return false;
     }
+}
+
+void POOL::showMitte(){
+    Mitte->setKOinSec(LGschnitt, BGschnitt);
 }
 
 bool POOL::pruefeBaum(){

@@ -39,6 +39,8 @@ class POOL{
       void setAnz();
       void setMax();
 
+      void showMitte();
+
 
 };  //Ende class POOL
 

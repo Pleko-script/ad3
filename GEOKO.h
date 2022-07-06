@@ -43,7 +43,6 @@ class GEOKO: public TE{
       double getBrSec();
       double getLaSec();
       double getAbstand();
-
       double getBGinSec();
       double getLGinSec();
 

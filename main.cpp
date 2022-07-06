@@ -18,6 +18,8 @@ Enthält das Hauptprogramm laut Aufgabenstellung
 
 using namespace std;
 
+POOL* pool;
+
 //MAIN
 int main (){
     cout.precision(2);
@@ -60,6 +62,7 @@ int main (){
 
         string filename = "Daten1.csv";
         //cin >> filename;
+        cout << endl;
 
         ifstream stream;
 
@@ -96,7 +99,7 @@ int main (){
                 k++;
             }
         }
-
+        pool->showMitte();
 
     } else if (wahl=="2"){
 
