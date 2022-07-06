@@ -10,6 +10,7 @@ Enth�lt den Code der Methoden der Klassen POINT, LINE und CIRCLE
 
 #include "GEOKO.h"
 #include "TE.h"
+#include <iostream>
 
 using namespace std;
 
@@ -25,13 +26,15 @@ GEOKO::GEOKO(int lg, int bg, int lm, int bm, double ls, double bs, double LGSec,
 
     BGinSec = BGSec;
     LGinSec = LGSec;
-
-
-    //erstelle Baumstruktur
-    //TE baumElement = new TE(TE* p, TE* l, TE* r);
 }
 
+GEOKO::GEOKO(double LGSec, double BGSec){
 
+    LGinSec = LGSec;
+    BGinSec = BGSec;
+
+    convertToCoordinates(LGSec, BGSec, 0);
+}
 
 int GEOKO::getBrGr(){
     return BrGr;
@@ -83,6 +86,58 @@ void GEOKO::setBrSec(double bs){
 void GEOKO::setLaSec(double ls){
     LaSec = ls;
 }
+void GEOKO::setKOinSec(double LG, double BG){
+    convertToCoordinates(LG, BG, 1);
+
+    LGinSec = LG;
+    BGinSec = BG;
+}
+
+
+
+
+void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte){
+
+
+    int LGmin = LGSec / 60;
+    double LGsec = LGSec - LGmin * 60;
+    int LGgrad = LGmin / 60;
+    LGmin = LGmin % 60;
+
+    int BGmin = BGSec / 60;
+    double BGsec = BGSec - BGmin * 60;
+    int BGgrad = BGmin / 60;
+    BGmin = BGmin % 60;
+
+    if(mitte==0){
+    cout << "-----Neue Koordiante-----" << endl;
+    } else {
+    cout << "-----Mitte-----" << endl;
+    }
+    cout << "Laenge (" << fixed << LGSec << ")"<< endl;
+    cout << "Grad:    " << LGgrad << endl;
+    cout << "Minute:  " << LGmin << endl;
+    cout << "Sekunde: " << fixed << LGsec << endl;
+    cout << endl;
+    cout << "Breite (" << fixed << BGSec << ")"<< endl;
+    cout << "Grad:    " << BGgrad << endl;
+    cout << "Minute:  " << BGmin << endl;
+    cout << "Sekunde: " << fixed << BGsec << endl;
+    cout << endl;
+    cout << endl;
+
+
+    LaGr = LGgrad;
+    BrGr = BGgrad;
+    LaMin = LGmin;
+    BrMin = BGmin;
+    LaSec = LGsec;
+    BrSec = BGsec;
+
+}
+
+
+
 bool GEOKO::operator<(const GEOKO &other) const{
     if(this->Abstand < other.Abstand){
         return true;

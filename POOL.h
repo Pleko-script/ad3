@@ -34,6 +34,7 @@ class POOL{
 
       long getAnz();
       long getMax();
+      GEOKO* getMitte();
 
       void setAnz();
       void setMax();

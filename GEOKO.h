@@ -32,6 +32,9 @@ class GEOKO: public TE{
    public :
       GEOKO ();  //Standardkonstruktor, Nutzung eventuell nicht erforderlich!
       GEOKO (int, int, int, int, double, double, double, double); //Initialisierungskonstruktor
+      GEOKO (double, double); //Initialisierungskonstruktor
+
+      void convertToCoordinates(double, double, bool);
 
       int getBrGr();
       int getLaGr();
@@ -56,8 +59,7 @@ class GEOKO: public TE{
       void setBrSec(double);
       void setLaSec(double);
 
-      void setBGinSec(double);
-      void setLGinSec(double);
+      void setKOinSec(double, double);
 
 
 };  //Ende class GEOKO

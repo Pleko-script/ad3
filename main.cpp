@@ -32,7 +32,7 @@ int main (){
     cout << endl;
     cout << "4) Daten der Liste schreiben" << endl;
     cout << endl;
-    cout << "5) Baumstruktur prüfen" << endl;
+    cout << "5) Baumstruktur pruefen" << endl;
     cout << endl;
     cout << "6) Ende" << endl;
     cout << endl;
@@ -45,8 +45,7 @@ int main (){
         //Bei 1.) soll ein bereits existierendes "POOL"-Objekt erst entfernt werden.
 
         cout << endl;
-        cout << "Wie viele Einträge soll der Baum maximal haben?" << endl;
-        cout << endl;
+        cout << "Wie viele Eintraege soll der Baum maximal haben?" << endl;
 
         long anzahl;
         cin >> anzahl;
@@ -58,7 +57,6 @@ int main (){
 
         cout << endl;
         cout << "Bitte geben Sie den Namen Ihrer .csv Datei an (Beispiel: Daten1.csv):" << endl;
-        cout << endl;
 
         string filename = "Daten1.csv";
         //cin >> filename;
@@ -68,7 +66,7 @@ int main (){
         stream.open(filename);
 
         if(stream.fail()){
-                cout << "Datei konnte nicht geöffnet werden" << endl;
+                cout << "Datei konnte nicht geoeffnet werden" << endl;
         }
 
         for(int i=1; i<=anzahl; i++){
@@ -90,31 +88,9 @@ int main (){
                     double dLG = atof(LG.c_str());
                     double dBG = atof(BG.c_str());
 
-                        int LGmin = dLG / 60;
-                        double LGsec = dLG - LGmin * 60;
-                        int LGgrad = LGmin / 60;
-                        LGmin = LGmin % 60;
+                    GEOKO* geoko = new GEOKO(dLG, dBG);
 
-                        int BGmin = dBG / 60;
-                        double BGsec = dBG - BGmin * 60;
-                        int BGgrad = BGmin / 60;
-                        BGmin = BGmin % 60;
-
-                        cout << "Länge (" << fixed << dLG << ")"<< endl;
-                        cout << "Grad:    " << LGgrad << endl;
-                        cout << "Minute:  " << LGmin << endl;
-                        cout << "Sekunde: " << fixed << LGsec << endl;
-                        cout << endl;
-                        cout << "Breite (" << fixed << dBG << ")"<< endl;
-                        cout << "Grad:    " << BGgrad << endl;
-                        cout << "Minute:  " << BGmin << endl;
-                        cout << "Sekunde: " << fixed << BGsec << endl;
-                        cout << endl;
-
-
-                        GEOKO* geoko = new GEOKO(LGgrad, BGgrad, LGmin, BGmin, LGsec, BGsec, dLG, dBG);
-
-                        pool->addElement(geoko);
+                    pool->addElement(geoko);
 
                 }
                 k++;
