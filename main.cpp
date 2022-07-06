@@ -20,6 +20,8 @@ using namespace std;
 
 //MAIN
 int main (){
+    cout.precision(2);
+
     cout << "---------------Sortier-Programm---------------" << endl;
     cout << endl;
     cout << "1) Daten einlesen und POOL-Objekt erstellen" << endl;
@@ -80,13 +82,13 @@ int main (){
             while(getline(ss, line, ',')){
                 if (k % 2) {
                     LG = line;
-                    cout << "LG " << i << ": " << LG << endl;
+                    //cout << "LG " << i << ": " << LG << endl;
                 } else{
                     BG = line;
-                    cout << "BG " << i << ": " << BG << endl;
-                    cout << endl;
-                    double dLG = stod(LG);
-                    double dBG = stod(BG);
+                    //cout << "BG " << i << ": " << BG << endl;
+                    //cout << endl;
+                    double dLG = atof(LG.c_str());
+                    double dBG = atof(BG.c_str());
 
                         int LGmin = dLG / 60;
                         double LGsec = dLG - LGmin * 60;
@@ -98,7 +100,19 @@ int main (){
                         int BGgrad = BGmin / 60;
                         BGmin = BGmin % 60;
 
-                        GEOKO* geoko = new GEOKO(BGgrad, LGgrad, BGmin, LGmin, BGsec, LGsec);
+                        cout << "Länge (" << fixed << dLG << ")"<< endl;
+                        cout << "Grad:    " << LGgrad << endl;
+                        cout << "Minute:  " << LGmin << endl;
+                        cout << "Sekunde: " << fixed << LGsec << endl;
+                        cout << endl;
+                        cout << "Breite (" << fixed << dBG << ")"<< endl;
+                        cout << "Grad:    " << BGgrad << endl;
+                        cout << "Minute:  " << BGmin << endl;
+                        cout << "Sekunde: " << fixed << BGsec << endl;
+                        cout << endl;
+
+
+                        GEOKO* geoko = new GEOKO(LGgrad, BGgrad, LGmin, BGmin, LGsec, BGsec, dLG, dBG);
 
                         pool->addElement(geoko);
 

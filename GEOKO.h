@@ -24,11 +24,14 @@ class GEOKO: public TE{
        double BrSec;
        double LaSec;
 
+       double BGinSec;
+       double LGinSec;
+
        double Abstand;
 
    public :
       GEOKO ();  //Standardkonstruktor, Nutzung eventuell nicht erforderlich!
-      GEOKO (int, int, int, int, double, double); //Initialisierungskonstruktor
+      GEOKO (int, int, int, int, double, double, double, double); //Initialisierungskonstruktor
 
       int getBrGr();
       int getLaGr();
@@ -37,7 +40,10 @@ class GEOKO: public TE{
       double getBrSec();
       double getLaSec();
       double getAbstand();
-      
+
+      double getBGinSec();
+      double getLGinSec();
+
       bool operator<(const GEOKO &other) const;
       bool operator>(const GEOKO &other) const;
       bool operator==(const GEOKO &other) const;
@@ -49,6 +55,9 @@ class GEOKO: public TE{
       void setLaMin(int);
       void setBrSec(double);
       void setLaSec(double);
+
+      void setBGinSec(double);
+      void setLGinSec(double);
 
 
 };  //Ende class GEOKO

@@ -9,6 +9,7 @@ Enth�lt den Code der Methoden der Klassen POINT, LINE und CIRCLE
 */
 
 #include "POOL.h"
+#include <iostream>
 
 using namespace std;
 
@@ -20,10 +21,30 @@ POOL::POOL(long Maximal){
     Anz = 0;
 }
 
+
+double LGsum = 0;
+double BGsum = 0;
+double LGschnitt;
+double BGschnitt;
+
 bool POOL::addElement(GEOKO* element){
+
     if (Anz < Max){
         Index[Anz] = *element;
         Anz++;
+
+        LGsum = LGsum + element->getLGinSec();
+        BGsum = BGsum + element->getBGinSec();
+
+        LGschnitt = LGsum / Anz;
+        BGschnitt = BGsum / Anz;
+
+        cout<< "Mitte"<<endl;
+        cout << "Länge: " << LGschnitt << endl;
+        cout << "Breite: " << BGschnitt << endl;
+        cout<<endl;
+
+
         return true;
     }
     else{

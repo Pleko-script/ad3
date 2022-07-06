@@ -15,13 +15,16 @@ using namespace std;
 
 GEOKO::GEOKO(){}
 
-GEOKO::GEOKO(int bg, int lg, int bm, int lm, double bs, double ls){
+GEOKO::GEOKO(int lg, int bg, int lm, int bm, double ls, double bs, double LGSec, double BGSec){
     BrGr = bg;
     LaGr = lg;
     BrMin = bm;
     LaMin = lm;
     BrSec = bs;
     LaSec = ls;
+
+    BGinSec = BGSec;
+    LGinSec = LGSec;
 
 
     //erstelle Baumstruktur
@@ -51,6 +54,16 @@ double GEOKO::getLaSec(){
 double GEOKO::getAbstand(){
     return Abstand;
 }
+
+double GEOKO::getLGinSec(){
+    return LGinSec;
+}
+
+double GEOKO::getBGinSec(){
+    return BGinSec;
+}
+
+
 
 void GEOKO::setBrGr(int bg){
     BrGr = bg;
