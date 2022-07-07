@@ -5,7 +5,7 @@ Gruppe: 21
 Jonas Pardeyke - 11142973
 Nik Tykhomyrov - 11134921
 
-Achtung: Signaturen dürfen nicht geändert werden!
+Achtung: Signaturen dï¿½rfen nicht geï¿½ndert werden!
 */
 
 #ifndef POOL_H_INCLUDED
@@ -41,6 +41,11 @@ class POOL{
 
       void showMitte();
 
+      void versinke(GEOKO*, int , int );
+      void erzeugeHeap(GEOKO *, int );
+      void heapSort(GEOKO *, int );
+      void vertausche(GEOKO *, int , int );
+GEOKO
 
 };  //Ende class POOL
 

@@ -57,3 +57,34 @@
 	"GEOKO.h"
 	"POOL.h"
 
+1657219747 source:c:\programmieren\uni\adprakt 3\ad3\geoko.cpp
+	"GEOKO.h"
+	"TE.h"
+	<iostream>
+
+1657219747 c:\programmieren\uni\adprakt 3\ad3\geoko.h
+	"TE.h"
+
+1657219747 c:\programmieren\uni\adprakt 3\ad3\te.h
+
+1657221147 source:c:\programmieren\uni\adprakt 3\ad3\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	"TE.h"
+	"GEOKO.h"
+	"POOL.h"
+
+1657219747 c:\programmieren\uni\adprakt 3\ad3\pool.h
+	"GEOKO.h"
+	<cstddef>
+
+1657231165 source:c:\programmieren\uni\adprakt 3\ad3\pool.cpp
+	"POOL.h"
+	<iostream>
+	<stdlib.h>
+
+1657219914 source:c:\programmieren\uni\adprakt 3\ad3\te.cpp
+	"TE.h"
+

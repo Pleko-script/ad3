@@ -14,9 +14,10 @@ Enth�lt den Code der Methoden der Klassen POINT, LINE und CIRCLE
 
 using namespace std;
 
-GEOKO::GEOKO(){}
+GEOKO::GEOKO() {}
 
-GEOKO::GEOKO(int lg, int bg, int lm, int bm, double ls, double bs, double LGSec, double BGSec){
+GEOKO::GEOKO(int lg, int bg, int lm, int bm, double ls, double bs, double LGSec, double BGSec)
+{
     BrGr = bg;
     LaGr = lg;
     BrMin = bm;
@@ -28,7 +29,8 @@ GEOKO::GEOKO(int lg, int bg, int lm, int bm, double ls, double bs, double LGSec,
     LGinSec = LGSec;
 }
 
-GEOKO::GEOKO(double LGSec, double BGSec){
+GEOKO::GEOKO(double LGSec, double BGSec)
+{
 
     LGinSec = LGSec;
     BGinSec = BGSec;
@@ -36,94 +38,122 @@ GEOKO::GEOKO(double LGSec, double BGSec){
     convertToCoordinates(LGSec, BGSec, 0);
 }
 
-int GEOKO::getBrGr(){
+int GEOKO::getBrGr()
+{
     return BrGr;
 }
-int GEOKO::getLaGr(){
+int GEOKO::getLaGr()
+{
     return LaGr;
 }
-int GEOKO::getBrMin(){
+int GEOKO::getBrMin()
+{
     return BrMin;
 }
-int GEOKO::getLaMin(){
+int GEOKO::getLaMin()
+{
     return LaMin;
 }
-double GEOKO::getBrSec(){
+double GEOKO::getBrSec()
+{
     return BrSec;
 }
-double GEOKO::getLaSec(){
+double GEOKO::getLaSec()
+{
     return LaSec;
 }
-double GEOKO::getAbstand(){
+double GEOKO::getAbstand()
+{
     return Abstand;
 }
-double GEOKO::getLGinSec(){
+double GEOKO::getLGinSec()
+{
     return LGinSec;
 }
-double GEOKO::getBGinSec(){
+double GEOKO::getBGinSec()
+{
     return BGinSec;
 }
 
-void GEOKO::setBrGr(int bg){
+void GEOKO::setBrGr(int bg)
+{
     BrGr = bg;
 }
-void GEOKO::setLaGr(int lg){
+void GEOKO::setLaGr(int lg)
+{
     LaGr = lg;
 }
-void GEOKO::setBrMin(int bm){
+void GEOKO::setBrMin(int bm)
+{
     BrMin = bm;
 }
-void GEOKO::setLaMin(int lm){
+void GEOKO::setLaMin(int lm)
+{
     LaMin = lm;
 }
-void GEOKO::setBrSec(double bs){
+void GEOKO::setBrSec(double bs)
+{
     BrSec = bs;
 }
-void GEOKO::setLaSec(double ls){
+void GEOKO::setLaSec(double ls)
+{
     LaSec = ls;
 }
-void GEOKO::setKOinSec(double LG, double BG){
+void GEOKO::setKOinSec(double LG, double BG)
+{
     convertToCoordinates(LG, BG, 1);
 
     LGinSec = LG;
     BGinSec = BG;
 }
 
-bool GEOKO::operator<(const GEOKO &other) const{
-    if(this->Abstand < other.Abstand){
+bool GEOKO::operator<(const GEOKO &other) const
+{
+    if (this->Abstand < other.Abstand)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
-bool GEOKO::operator>(const GEOKO &other) const{
-    if(this->Abstand > other.Abstand){
+bool GEOKO::operator>(const GEOKO &other) const
+{
+    if (this->Abstand > other.Abstand)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
-bool GEOKO::operator==(const GEOKO &other) const{
-    if(this->Abstand == other.Abstand){
+bool GEOKO::operator==(const GEOKO &other) const
+{
+    if (this->Abstand == other.Abstand)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
-bool GEOKO::operator!=(const GEOKO &other) const{
-    if(this->Abstand != other.Abstand){
+bool GEOKO::operator!=(const GEOKO &other) const
+{
+    if (this->Abstand != other.Abstand)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
 
-void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte){
-
+void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte)
+{
 
     int LGmin = LGSec / 60;
     double LGsec = LGSec - LGmin * 60;
@@ -135,18 +165,21 @@ void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte){
     int BGgrad = BGmin / 60;
     BGmin = BGmin % 60;
 
-    if(mitte==0){
+    if (mitte == 0)
+    {
         cout << "-----Neue Koordiante-----" << endl;
-    }else{
+    }
+    else
+    {
         cout << "-----Mitte-----" << endl;
     }
 
-    cout << "Laenge (" << fixed << LGSec << ")"<< endl;
+    cout << "Laenge (" << fixed << LGSec << ")" << endl;
     cout << "Grad:    " << LGgrad << endl;
     cout << "Minute:  " << LGmin << endl;
     cout << "Sekunde: " << fixed << LGsec << endl;
     cout << endl;
-    cout << "Breite (" << fixed << BGSec << ")"<< endl;
+    cout << "Breite (" << fixed << BGSec << ")" << endl;
     cout << "Grad:    " << BGgrad << endl;
     cout << "Minute:  " << BGmin << endl;
     cout << "Sekunde: " << fixed << BGsec << endl;
@@ -159,5 +192,4 @@ void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte){
     BrMin = BGmin;
     LaSec = LGsec;
     BrSec = BGsec;
-
 }
