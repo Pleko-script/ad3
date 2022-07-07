@@ -45,8 +45,6 @@ class POOL{
       void erzeugeHeap(GEOKO *, int );
       void heapSort(GEOKO *, int );
       void vertausche(GEOKO *, int , int );
-GEOKO
-
 };  //Ende class POOL
 
 

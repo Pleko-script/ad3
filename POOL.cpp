@@ -111,6 +111,7 @@ GEOKO *POOL::getMitte()
     return Mitte;
 }
 
+/*
 void POOL::versinke(GEOKO *Feld, int Anz, int i)
 {
     while (i <= Anz / 2)
@@ -153,4 +154,4 @@ void POOL::vertausche(GEOKO *Feld, int Von, int Nach)
     int Tmp = Feld[Von];
     Feld[Von] = Feld[Nach];
     Feld[Nach] = Tmp;
-}
+}*/
