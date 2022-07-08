@@ -189,7 +189,6 @@ void GEOKO::convertToCoordinates(double LGSec, double BGSec, bool mitte)
     cout << "Minute:  " << BGmin << endl;
     cout << "Sekunde: " << fixed << BGsec << endl;
     cout << endl;
-    cout << endl;
 
     LaGr = LGgrad;
     BrGr = BGgrad;

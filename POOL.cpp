@@ -43,23 +43,31 @@ bool POOL::addElement(GEOKO *element)
         {
 
             element->setP(Index[Anz / 2].getL());
-            cout << "Index nr:" << Anz / 2 << " Modul:True" << endl;
+            cout << "Index nr: " << Anz / 2 << " Modul: true" << endl;
         }
         else
         {
             element->setP(Index[(Anz / 2) - 1].getR());
 
-            cout << "Index nr:" << Anz / 2 << " Modul:false" << endl;
+            cout << "Index nr: " << Anz / 2 << " Modul: false" << endl;
+
         }
     }
 
-    cout << "P: " << element->getP() << endl;
-    cout << "L: " << element->getL() << endl;
-    cout << "R: " << element->getR() << endl;
-    cout << "Anz: " << Anz << endl;
 
-    if (Anz < Max)
-    {
+
+
+        cout << "P: " << element->getP() << endl;
+        cout << "L: " << element->getL() << endl;
+        cout << "R: " << element->getR() << endl;
+        cout << "Anz: " << Anz << endl;
+        cout << endl;
+        cout << endl;
+
+
+        if (Anz < Max)
+        {
+
         Index[Anz] = *element;
         Anz++;
 
@@ -94,7 +102,7 @@ void POOL::setAbstand(){
 
         Index[i].setAbstand(abs);
 
-        cout << "Abstand " << i << ": " << abs << endl;
+        cout << "Abstand von Koordinate " << i+1 << " zum Mittelpunkt: " << abs << endl;
 
 
     }
