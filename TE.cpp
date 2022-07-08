@@ -34,6 +34,11 @@ TE *TE::getR()
     return R;
 }
 
+TE *TE::getThis()
+{
+    return this;
+}
+
 void TE::setP(TE *parent)
 {
     P = parent;

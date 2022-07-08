@@ -54,9 +54,6 @@ bool POOL::addElement(GEOKO *element)
         }
     }
 
-
-
-
         cout << "P: " << element->getP() << endl;
         cout << "L: " << element->getL() << endl;
         cout << "R: " << element->getR() << endl;
@@ -65,10 +62,44 @@ bool POOL::addElement(GEOKO *element)
         cout << endl;
 
 
-        if (Anz < Max)
-        {
 
-        Index[Anz] = *element;
+
+        if (Anz < Max)
+
+        {
+            Index[Anz] = *element;
+
+            /* Jonas Alternative
+
+            Root = &Index[Anz];
+
+            if(Anz == 0)
+            {
+
+            } else if (Anz == 1)
+            {
+                Index[Anz].setP(Root);
+                Index[0].setL(Index[1].getThis());
+
+            } else if (Anz == 2)
+            {
+                Index[Anz].setP(Root);
+                Index[0].setR(Index[2].getThis());
+
+            } else if (Anz%2 == 1)
+            {
+                Index[Anz].setP(Index[Anz / 2].getThis());
+                Index[Anz / 2].setL(Index[Anz].getThis());
+
+            } else if (Anz%2 == 0)
+            {
+                Index[Anz].setP(Index[Anz / 2].getThis());
+                Index[Anz / 2].setR(Index[Anz].getThis());
+            }
+
+*/
+
+
         Anz++;
 
         LGsum = LGsum + element->getLGinSec();
@@ -87,6 +118,8 @@ bool POOL::addElement(GEOKO *element)
         return false;
     }
 }
+
+
 
 void POOL::showMitte()
 {
@@ -135,6 +168,9 @@ GEOKO *POOL::getMitte()
     return Mitte;
 }
 
+GEOKO *POOL::getIndex(){
+    return Index;
+}
 /*
 void POOL::versinke(GEOKO *Feld, int Anz, int i)
 {

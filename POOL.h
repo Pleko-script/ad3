@@ -22,7 +22,7 @@ class POOL{
         long Anz;
         GEOKO* Mitte = new GEOKO();
         GEOKO* Index;
-        GEOKO* Root = Index;
+        GEOKO* Root;
 
 
    public :
@@ -34,6 +34,7 @@ class POOL{
 
       long getAnz();
       long getMax();
+      GEOKO* getIndex();
       GEOKO* getMitte();
 
       void setAnz();

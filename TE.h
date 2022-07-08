@@ -27,6 +27,7 @@ public:
     TE *getP();
     TE *getL();
     TE *getR();
+    TE *getThis();
 
     void setP(TE *);
     void setL(TE *);
