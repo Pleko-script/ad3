@@ -15,8 +15,11 @@ Enthält das Hauptprogramm laut Aufgabenstellung
 #include "TE.h"
 #include "GEOKO.h"
 #include "POOL.h"
+#include <chrono>
+
 
 using namespace std;
+using namespace std::chrono;
 
 // POOL *pool;
 long anzahl = 1;
@@ -56,6 +59,8 @@ int main()
     pool->setAnz(anzahl);
     if (wahl == "1")
     {
+
+        auto start = high_resolution_clock::now();
 
         // Bei 1.) soll ein bereits existierendes "POOL"-Objekt erst entfernt werden.
 
@@ -116,16 +121,34 @@ int main()
         }
         pool->showMitte();
         pool->setAbstand();
+
+                auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << duration.count() << endl;
     }
     else if (wahl == "2")
     {
+
+        auto start = high_resolution_clock::now();
+        //pool->heapSort();
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "Execution time: " << duration.count() << endl;
+
     }
     else if (wahl == "3")
     {
+        auto start = high_resolution_clock::now();
         pool->bubbleSort();
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "Execution time: " << duration.count() << endl;
     }
     else if (wahl == "4")
     {
+
+
+
     }
     else if (wahl == "5")
     {

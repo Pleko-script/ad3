@@ -224,6 +224,7 @@ void POOL::vertausche(GEOKO *Feld, int Von, int Nach)
     Feld[Von] = Feld[Nach];
     Feld[Nach] = Tmp;
 }*/
+
 void POOL::bubbleSort()
 {
     //** Der Abstand soll noch berechnet werden  damit kein error kommt **//
@@ -232,7 +233,7 @@ void POOL::bubbleSort()
     {
         for (int j = 0; j < i; j++)
         {
-            if (Index[j]> Index[j + 1])
+            if (Index[j] > Index[j + 1])
             {
                 GEOKO Tmp = Index[j];
                 Index[j] = Index[j + 1];
