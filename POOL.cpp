@@ -29,6 +29,13 @@ double BGsum = 0;
 double LGschnitt;
 double BGschnitt;
 
+  long POOL::getAnz(){
+    return Anz;
+  }
+  void POOL::setAnz(long Anz){
+    this->Anz = Anz;
+  }
+
 bool POOL::addElement(GEOKO *element)
 {
 
@@ -43,13 +50,10 @@ bool POOL::addElement(GEOKO *element)
         {
 
             element->setP(Index[Anz / 2].getL());
-            cout << "Index nr: " << Anz / 2 << " Modul: true" << endl;
         }
         else
         {
             element->setP(Index[(Anz / 2) - 1].getR());
-
-            cout << "Index nr: " << Anz / 2 << " Modul: false" << endl;
 
         }
     }
@@ -179,3 +183,23 @@ void POOL::vertausche(GEOKO *Feld, int Von, int Nach)
     Feld[Von] = Feld[Nach];
     Feld[Nach] = Tmp;
 }*/
+void POOL::bubbleSort()
+{
+    //** Der Abstand soll noch berechnet werden  damit kein error kommt **//
+    //for (int i = Anz-1; i > 0; i--)
+    for (int i = Anz; i > 0; i--)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (Index[j]> Index[j + 1])
+            {
+                GEOKO Tmp = Index[j];
+                Index[j] = Index[j + 1];
+                Index[j + 1] = Tmp;
+            }
+        }
+    }
+
+
+
+}
