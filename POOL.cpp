@@ -43,6 +43,10 @@ bool POOL::addElement(GEOKO *element)
     element->setL((TE *)malloc(sizeof(TE)));
     element->setR((TE *)malloc(sizeof(TE)));
 
+    if(Anz==0){
+        element->setP(NULL);
+    }
+
     if (Anz > 0)
     {
 
