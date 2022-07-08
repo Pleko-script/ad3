@@ -35,9 +35,9 @@
 1657283242 \\mac\home\desktop\git ad3\geoko.h
 	"TE.h"
 
-1657288676 \\mac\home\desktop\git ad3\te.h
+1657293423 \\mac\home\desktop\git ad3\te.h
 
-1657288677 source:\\mac\home\desktop\git ad3\te.cpp
+1657293423 source:\\mac\home\desktop\git ad3\te.cpp
 	"TE.h"
 
 1657292852 source:\\mac\home\desktop\git ad3\pool.cpp
@@ -46,11 +46,11 @@
 	<stdlib.h>
 	<math.h>
 
-1657292621 \\mac\home\desktop\git ad3\pool.h
+1657293423 \\mac\home\desktop\git ad3\pool.h
 	"GEOKO.h"
 	<cstddef>
 
-1657292598 source:\\mac\home\desktop\git ad3\main.cpp
+1657292910 source:\\mac\home\desktop\git ad3\main.cpp
 	<iostream>
 	<fstream>
 	<sstream>

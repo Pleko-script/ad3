@@ -58,24 +58,14 @@ bool POOL::addElement(GEOKO *element)
         else
         {
             element->setP(Index[(Anz / 2) - 1].getR());
-
-<<<<<<< HEAD
             cout << "Index nr: " << Anz / 2 << " Modul: false" << endl;
 
         }
     }
-=======
-        }
-    }
-
-
-
->>>>>>> 849bb9fc562c4230b33a5f5988cc363c3b0959bd
 
         cout << "P: " << element->getP() << endl;
         cout << "L: " << element->getL() << endl;
         cout << "R: " << element->getR() << endl;
-<<<<<<< HEAD
         cout << "Anz: " << Anz << endl;
         cout << endl;
         cout << endl;
@@ -119,17 +109,6 @@ bool POOL::addElement(GEOKO *element)
 */
 
 
-=======
-        cout << "Anz: " << Anz << endl;
-        cout << endl;
-        cout << endl;
-
-
-        if (Anz < Max)
-        {
-
-        Index[Anz] = *element;
->>>>>>> 849bb9fc562c4230b33a5f5988cc363c3b0959bd
         Anz++;
 
         LGsum = LGsum + element->getLGinSec();
