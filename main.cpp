@@ -18,7 +18,16 @@ Enthält das Hauptprogramm laut Aufgabenstellung
 
 using namespace std;
 
-POOL *pool;
+// POOL *pool;
+long anzahl = 1;
+// Heap-Sorted list
+void heapSortMethode(POOL *pool, int n)
+{
+}
+// ausgabe der Liste
+void ausgabe(POOL *pool)
+{
+}
 
 // MAIN
 int main()
@@ -43,6 +52,8 @@ int main()
     // verfahren wird ausgewählt
     string wahl;
     cin >> wahl;
+    POOL *pool = new POOL(100);
+    pool->setAnz(anzahl);
     if (wahl == "1")
     {
 
@@ -51,7 +62,6 @@ int main()
         cout << endl;
         cout << "Wie viele Eintraege soll der Baum maximal haben?" << endl;
 
-        long anzahl;
         cin >> anzahl;
 
         // erstelle POOL Objekt
@@ -112,6 +122,7 @@ int main()
     }
     else if (wahl == "3")
     {
+        pool->bubbleSort();
     }
     else if (wahl == "4")
     {
@@ -125,6 +136,10 @@ int main()
         cout << endl;
         cout << "Programm beendet" << endl;
         exit(0);
+    }
+    else if (wahl == "7")
+    {
+        cout << pool->getAnz() << " Eintraege" << endl;
     }
     else
     { // bei nicht Eingabe von 1 oder 2 wird neugestartet

@@ -37,8 +37,8 @@ class POOL{
       GEOKO* getIndex();
       GEOKO* getMitte();
 
-      void setAnz();
-      void setMax();
+      void setAnz(long);
+      void setMax(long);
 
       void showMitte();
       void setAbstand();
@@ -47,6 +47,8 @@ class POOL{
       void erzeugeHeap(GEOKO *, int );
       void heapSort(GEOKO *, int );
       void vertausche(GEOKO *, int , int );
+
+      void bubbleSort();
 };  //Ende class POOL
 
 

@@ -29,12 +29,23 @@ double BGsum = 0;
 double LGschnitt;
 double BGschnitt;
 
+  long POOL::getAnz(){
+    return Anz;
+  }
+  void POOL::setAnz(long Anz){
+    this->Anz = Anz;
+  }
+
 bool POOL::addElement(GEOKO *element)
 {
 
     element->setP((TE *)malloc(sizeof(TE)));
     element->setL((TE *)malloc(sizeof(TE)));
     element->setR((TE *)malloc(sizeof(TE)));
+
+    if(Anz==0){
+        element->setP(NULL);
+    }
 
     if (Anz > 0)
     {
@@ -43,20 +54,28 @@ bool POOL::addElement(GEOKO *element)
         {
 
             element->setP(Index[Anz / 2].getL());
-            cout << "Index nr: " << Anz / 2 << " Modul: true" << endl;
         }
         else
         {
             element->setP(Index[(Anz / 2) - 1].getR());
 
+<<<<<<< HEAD
             cout << "Index nr: " << Anz / 2 << " Modul: false" << endl;
 
         }
     }
+=======
+        }
+    }
+
+
+
+>>>>>>> 849bb9fc562c4230b33a5f5988cc363c3b0959bd
 
         cout << "P: " << element->getP() << endl;
         cout << "L: " << element->getL() << endl;
         cout << "R: " << element->getR() << endl;
+<<<<<<< HEAD
         cout << "Anz: " << Anz << endl;
         cout << endl;
         cout << endl;
@@ -100,6 +119,17 @@ bool POOL::addElement(GEOKO *element)
 */
 
 
+=======
+        cout << "Anz: " << Anz << endl;
+        cout << endl;
+        cout << endl;
+
+
+        if (Anz < Max)
+        {
+
+        Index[Anz] = *element;
+>>>>>>> 849bb9fc562c4230b33a5f5988cc363c3b0959bd
         Anz++;
 
         LGsum = LGsum + element->getLGinSec();
@@ -215,3 +245,23 @@ void POOL::vertausche(GEOKO *Feld, int Von, int Nach)
     Feld[Von] = Feld[Nach];
     Feld[Nach] = Tmp;
 }*/
+void POOL::bubbleSort()
+{
+    //** Der Abstand soll noch berechnet werden  damit kein error kommt **//
+    //for (int i = Anz-1; i > 0; i--)
+    for (int i = Anz; i > 0; i--)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (Index[j]> Index[j + 1])
+            {
+                GEOKO Tmp = Index[j];
+                Index[j] = Index[j + 1];
+                Index[j + 1] = Tmp;
+            }
+        }
+    }
+
+
+
+}
