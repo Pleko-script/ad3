@@ -40,6 +40,7 @@ class POOL{
       void setMax();
 
       void showMitte();
+      void setAbstand();
 
       void versinke(GEOKO*, int , int );
       void erzeugeHeap(GEOKO *, int );

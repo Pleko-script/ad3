@@ -5,7 +5,7 @@ Gruppe: 21
 Jonas Pardeyke - 11142973
 Nik Tykhomyrov - 11134921
 
-Achtung: Signaturen d�rfen nicht ge�ndert werden!
+Achtung: Signaturen dürfen nicht ge�ndert werden!
 */
 
 #ifndef TE_H_INCLUDED

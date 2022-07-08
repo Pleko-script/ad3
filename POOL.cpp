@@ -11,6 +11,7 @@ Enth�lt den Code der Methoden der Klassen POINT, LINE und CIRCLE
 #include "POOL.h"
 #include <iostream>
 #include <stdlib.h>
+#include <math.h>
 
 using namespace std;
 
@@ -82,6 +83,21 @@ bool POOL::addElement(GEOKO *element)
 void POOL::showMitte()
 {
     Mitte->setKOinSec(LGschnitt, BGschnitt);
+}
+
+void POOL::setAbstand(){
+    for(int i=0; i<Max; i++){
+        double LGinSec = Index[i].getLGinSec();
+        double BGinSec = Index[i].getBGinSec();
+
+        double abs = sqrt((Mitte->getLGinSec() - LGinSec)*(Mitte->getLGinSec() - LGinSec)+(Mitte->getBGinSec() - BGinSec)*(Mitte->getBGinSec() - BGinSec));
+
+        Index[i].setAbstand(abs);
+
+        cout << "Abstand " << i << ": " << abs << endl;
+
+
+    }
 }
 
 bool POOL::pruefeBaum()

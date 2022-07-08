@@ -105,6 +105,7 @@ int main()
             }
         }
         pool->showMitte();
+        pool->setAbstand();
     }
     else if (wahl == "2")
     {

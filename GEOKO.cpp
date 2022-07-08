@@ -99,6 +99,11 @@ void GEOKO::setLaSec(double ls)
 {
     LaSec = ls;
 }
+
+void GEOKO::setAbstand(double abs){
+    Abstand = abs;
+}
+
 void GEOKO::setKOinSec(double LG, double BG)
 {
     convertToCoordinates(LG, BG, 1);

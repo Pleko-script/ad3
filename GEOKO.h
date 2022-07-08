@@ -58,6 +58,7 @@ public:
     void setLaMin(int);
     void setBrSec(double);
     void setLaSec(double);
+    void setAbstand(double);
 
     void setKOinSec(double, double);
 
