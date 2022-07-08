@@ -5,7 +5,7 @@ Gruppe: 21
 Jonas Pardeyke - 11142973
 Nik Tykhomyrov - 11134921
 
-Achtung: Signaturen dürfen nicht geändert werden!
+Achtung: Signaturen dï¿½rfen nicht geï¿½ndert werden!
 */
 
 #ifndef TE_H_INCLUDED
@@ -13,25 +13,25 @@ Achtung: Signaturen dürfen nicht geändert werden!
 
 using namespace std;
 
-class TE{
-   private:
-       TE* P;
-       TE* L;
-       TE* R;
+class TE
+{
+private:
+    TE *P;
+    TE *L;
+    TE *R;
 
-   public :
-      TE ();  //Standardkonstruktor, Nutzung eventuell nicht erforderlich!
-      TE (TE*, TE*, TE*); //Initialisierungskonstruktor
+public:
+    TE();                 // Standardkonstruktor, Nutzung eventuell nicht erforderlich!
+    TE(TE *, TE *, TE *); // Initialisierungskonstruktor
 
-      TE* getP();
-      TE* getL();
-      TE* getR();
+    TE *getP();
+    TE *getL();
+    TE *getR();
 
-      void setP(TE*);
-      void setL(TE*);
-      void setR(TE*);
+    void setP(TE *);
+    void setL(TE *);
+    void setR(TE *);
 
-};  //Ende class TE
-
+}; // Ende class TE
 
 #endif // TE_H_INCLUDED

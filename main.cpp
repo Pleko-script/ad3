@@ -18,10 +18,11 @@ Enthält das Hauptprogramm laut Aufgabenstellung
 
 using namespace std;
 
-POOL* pool;
+POOL *pool;
 
-//MAIN
-int main (){
+// MAIN
+int main()
+{
     cout.precision(2);
 
     cout << "---------------Sortier-Programm---------------" << endl;
@@ -39,12 +40,13 @@ int main (){
     cout << "6) Ende" << endl;
     cout << endl;
 
-    //verfahren wird ausgewählt
+    // verfahren wird ausgewählt
     string wahl;
     cin >> wahl;
-    if(wahl=="1"){
+    if (wahl == "1")
+    {
 
-        //Bei 1.) soll ein bereits existierendes "POOL"-Objekt erst entfernt werden.
+        // Bei 1.) soll ein bereits existierendes "POOL"-Objekt erst entfernt werden.
 
         cout << endl;
         cout << "Wie viele Eintraege soll der Baum maximal haben?" << endl;
@@ -52,27 +54,27 @@ int main (){
         long anzahl;
         cin >> anzahl;
 
-
-        //erstelle POOL Objekt
-        POOL* pool = new POOL(anzahl);
-
+        // erstelle POOL Objekt
+        POOL *pool = new POOL(anzahl);
 
         cout << endl;
         cout << "Bitte geben Sie den Namen Ihrer .csv Datei an (Beispiel: Daten1.csv):" << endl;
 
         string filename = "Daten1.csv";
-        //cin >> filename;
+        // cin >> filename;
         cout << endl;
 
         ifstream stream;
 
         stream.open(filename);
 
-        if(stream.fail()){
-                cout << "Datei konnte nicht geoeffnet werden" << endl;
+        if (stream.fail())
+        {
+            cout << "Datei konnte nicht geoeffnet werden" << endl;
         }
 
-        for(int i=1; i<=anzahl; i++){
+        for (int i = 1; i <= anzahl; i++)
+        {
             string LG;
             string BG;
 
@@ -80,50 +82,56 @@ int main (){
             getline(stream, line);
             stringstream ss(line);
             int k = 1;
-            while(getline(ss, line, ',')){
-                if (k % 2) {
+            while (getline(ss, line, ','))
+            {
+                if (k % 2)
+                {
                     LG = line;
-                    //cout << "LG " << i << ": " << LG << endl;
-                } else{
+                    // cout << "LG " << i << ": " << LG << endl;
+                }
+                else
+                {
                     BG = line;
-                    //cout << "BG " << i << ": " << BG << endl;
-                    //cout << endl;
+                    // cout << "BG " << i << ": " << BG << endl;
+                    // cout << endl;
                     double dLG = atof(LG.c_str());
                     double dBG = atof(BG.c_str());
 
-                    GEOKO* geoko = new GEOKO(dLG, dBG);
+                    GEOKO *geoko = new GEOKO(dLG, dBG);
 
                     pool->addElement(geoko);
-
                 }
                 k++;
             }
         }
         pool->showMitte();
-
-    } else if (wahl=="2"){
-
-    } else if (wahl=="3"){
-
-    } else if (wahl=="4"){
-
-    } else if (wahl=="5"){
-
-
-    } else if (wahl == "6"){
+    }
+    else if (wahl == "2")
+    {
+    }
+    else if (wahl == "3")
+    {
+    }
+    else if (wahl == "4")
+    {
+    }
+    else if (wahl == "5")
+    {
+        pool->pruefeBaum();
+    }
+    else if (wahl == "6")
+    {
         cout << endl;
         cout << "Programm beendet" << endl;
         exit(0);
-
-    } else{   //bei nicht Eingabe von 1 oder 2 wird neugestartet
+    }
+    else
+    { // bei nicht Eingabe von 1 oder 2 wird neugestartet
         cout << endl;
         cout << "RESTART" << endl;
         main();
-
     }
 
     main();
     return 0;
-
 }
-
